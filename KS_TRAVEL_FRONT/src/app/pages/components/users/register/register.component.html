@@ -1,0 +1,37 @@
+<div class="font-[sans-serif]">
+    <div class="min-h-screen flex fle-col items-center justify-center mt-5 py-6 px-4">
+      <div class="grid md:grid-cols-2 items-center gap-4 max-w-6xl w-full">
+        <div class="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
+            <div class="mb-8">
+              <h3 class="flex text-gray-800 justify-center text-3xl font-extrabold uppercase">Register</h3>
+              <p class="flex justify-center text-gray-500 text-sm mt-4 leading-relaxed">Create an account to start managing your blog.</p>
+            </div>
+  
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <app-input-fields label="Full Name" type="text" formControlName="name"></app-input-fields>
+                <app-input-fields label="Email" type="email" formControlName="email"></app-input-fields>
+                <app-input-fields label="Mobile" type="text" formControlName="mobile"></app-input-fields>
+                <app-input-fields label="Password" type="password" formControlName="password"></app-input-fields>
+                <app-input-fields label="Confirm Password" type="password" formControlName="confirmPassword"></app-input-fields>
+
+                <div class="!mt-8">
+                    <button type="submit" class="w-full shadow-xl py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">
+                      Register
+                    </button>
+                  </div>
+              </form>
+  
+            <p class="text-sm !mt-8 text-center text-gray-800">
+              Already have an account? 
+              <a [routerLink]="['/login']" class="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">
+                Sign in here
+              </a>
+            </p>
+        </div>
+  
+        <div class="lg:h-[400px] md:h-[300px] max-md:mt-8">
+          <img src="https://readymadeui.com/login-image.webp" class="w-full h-full max-md:w-4/5 mx-auto block object-cover" alt="Blog Management" />
+        </div>
+      </div>
+    </div>
+  </div>

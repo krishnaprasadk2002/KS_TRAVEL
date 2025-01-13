@@ -1,0 +1,31 @@
+<div class="font-[sans-serif]">
+    <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
+      <div class="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)]">
+        <h3 class="flex text-gray-800 justify-center text-3xl font-extrabold uppercase">OTP Verification</h3>
+        <p class="flex justify-center text-gray-500 text-sm mt-4 leading-relaxed">Enter the OTP sent to your registered email.</p>
+  
+        <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+          <div class="flex justify-center mt-4">
+            <app-input-fields label="OTP" type="text" formControlName="otp"></app-input-fields>
+            </div>
+  
+          <div class="!mt-8">
+            <button
+              type="submit"
+              class="w-full shadow-xl py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+            >
+              Verify OTP
+            </button>
+          </div>
+          <p class="text-sm text-center text-red-700 mt-4">Time remaining:{{timer}} seconds</p>
+          <a (click)="resendOtp()"
+          [class.disabled]="isLinkDisabled"
+          [ngClass]="{'text-gray-500 cursor-not-allowed': isLinkDisabled, 'text-black font-semibold hover:underline': !isLinkDisabled}"
+          class="ml-1 whitespace-nowrap cursor-pointer">
+         Resend OTP
+       </a>
+        </form>
+      </div>
+    </div>
+  </div>
+  

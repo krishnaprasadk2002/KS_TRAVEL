@@ -12,6 +12,9 @@ export class AuthenticationWindowComponent {
   private router = inject(Router)
 
   openLoginModal(userType: 'owner' | 'user'): void {
+    if(userType == 'user'){
+      this.router.navigate(['/login'])
+    }
     console.log(`Opening login modal for ${userType}`);
     // Implement login modal logic here
   }
