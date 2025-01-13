@@ -1,0 +1,75 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full bg-white rounded-xl shadow-xl">
+      <div class="p-6 md:p-10">
+        <!-- Header Section -->
+        <div class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+            Welcome to BusConnect
+          </h1>
+          <p class="text-gray-600 text-sm md:text-base">
+            Your one-stop platform for bus services management and booking
+          </p>
+        </div>
+
+        <!-- Login Options Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Bus Owners Section -->
+          <div class="group">
+            <div class="h-full border rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg bg-white hover:scale-[1.02]">
+              <div class="flex justify-center mb-4">
+                <i class="fas fa-bus text-5xl text-blue-600"></i>
+              </div>
+              <h2 class="text-xl font-semibold text-gray-800 mb-3">
+                Bus Owners Portal
+              </h2>
+              <p class="text-gray-600 text-sm mb-6 px-4">
+                Manage your fleet, track performance, and grow your business with our comprehensive management tools.
+              </p>
+              <button (click)="openLoginModal('owner')"
+                class="w-full py-3 px-4 bg-blue-600 text-white font-medium rounded-lg transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Access Owner Dashboard
+              </button>
+              <p class="mt-4 text-xs text-gray-500">
+                New to BusConnect? 
+                <span (click)="openRegisterModal('owner')" 
+                  class="text-blue-600 cursor-pointer hover:underline">
+                  Register here
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Users Section -->
+          <div class="group">
+            <div class="h-full border rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg bg-white hover:scale-[1.02]">
+              <div class="flex justify-center mb-4">
+                <i class="fas fa-user-circle text-5xl text-green-600"></i>
+              </div>
+              <h2 class="text-xl font-semibold text-gray-800 mb-3">
+                Passenger Portal
+              </h2>
+              <p class="text-gray-600 text-sm mb-6 px-4">
+                Book tickets, track your journey, and enjoy hassle-free travel with our user-friendly booking system.
+              </p>
+              <button (click)="openLoginModal('user')"
+                class="w-full py-3 px-4 bg-green-600 text-white font-medium rounded-lg transition-colors hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                Start Booking
+              </button>
+              <p class="mt-4 text-xs text-gray-500">
+                First time user? 
+                <span (click)="openRegisterModal('user')"
+                  class="text-green-600 cursor-pointer hover:underline">
+                  Create account
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="mt-8 text-center text-sm text-gray-500">
+          <p>Need help? Contact our support team 24/7</p>
+        </div>
+      </div>
+    </div>
+  </div>
